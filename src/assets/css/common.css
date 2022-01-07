@@ -1,0 +1,313 @@
+@charset "utf-8";
+@import "configCss.css";
+
+html {
+    box-sizing: border-box;
+    font-size: var( --font-Size14 );
+}
+
+html, body, p, ol, ul, li, dl, dt, dd,
+blockquote, figure, fieldset, legend,
+textarea, pre, iframe, hr, h1, h2, h3,
+h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+button, input, select, textarea {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    color: #333;
+    font-size: 1rem;
+    font-family:var( --font-family );
+    line-height: 1.5;
+    word-break: break-all;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    vertical-align: bottom;
+    border: none;
+}
+
+input, textarea {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+    font-family: inherit;
+}
+
+.wH100{
+    width: 100%;
+    height: 100%;
+}
+/*flex*/
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+}
+.rowFlex{
+    display: flex;
+}
+.rowSpace{
+    display: flex;
+    justify-content: space-between;
+}
+.rowCenter{
+    display: flex;
+    justify-content: center;
+}
+.flex1{
+  display: flex;
+  flex: 1;
+}
+.rowEnd{
+  display: flex;
+  justify-content: flex-end;
+}
+.flexWrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.alignCenter{
+    display: flex;
+    align-items: center;
+}
+/*Container*/
+.Container{
+    width: 100%;
+    height: 100%;
+}
+/*header*/
+.headerMain{
+    width: 100%;
+    height: var( --header-Height );
+    background: #FFFFFF linear-gradient(270deg, var( --header-Background-start ) 0%, var( --header-Background-end ) 100%);
+    color: #fff;
+}
+/*内容区域*/
+.homeMain{
+    width: 100%;
+    height: var( --main-Height );
+    padding: 32px 8px;
+    box-sizing: border-box;
+    background: #F5F6F8;
+}
+
+.pageName{
+  font-size: 18px;
+  color: #1a1e28;
+  margin-bottom: 10px;
+  height: 30px;
+  line-height: 30px;
+}
+
+/*panel公共样式*/
+.pageBox{
+  height: 100%;
+}
+.panelMain{
+  background: #FFFFFF;
+  box-shadow: 0px 2px 12px 0px var( --panelBox-shadow );
+  padding: 30px;
+  height: calc(100% - 37px);
+}
+.panelMainTitle{
+  color: var( --panelTitleColor );
+  font-size: 18px;
+}
+.borderPanel{
+  border-bottom: 1px solid #E7E7E7;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+.queryPanel{
+  background: #FFFFFF;
+  box-shadow: 2px 2px 11px 0px var( --panelBox-shadow );
+  border-radius: 11px;
+  padding: 1%;
+  box-sizing: border-box;
+}
+/*头部*/
+.changeBreadcrumb.el-breadcrumb{
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+}
+/*滚动*/
+.overFlowY{
+  overflow-y: auto;
+}
+
+/*按钮*/
+.buttonList.el-button{
+  margin-right: 10px;
+}
+.el-radio{
+  width: auto!important;
+}
+.datetimerange .el-date-editor.el-input,.datetimerange .el-date-editor.el-input__inner {
+  width: 180px;
+}
+@media (max-width: 1440px) {
+  .panelMainTitle{font-size: 20px}
+}
+
+/*  form 表单样式统一控制 需要在form上添加class命:'myForm' s*/
+ .myForm .el-form-item {
+   margin-bottom: 20px;
+  margin-right: 30px;
+}
+.myForm .el-form-item .el-form-item__label{
+  color: #1A1E28;
+  font-size: 14px;
+  line-height: 35px;
+  padding-right: 0px;
+}
+.myForm .el-form-item__content{
+  line-height: 35px;
+}
+.myForm .el-input__inner {
+  width: 240px;
+  height: 35px;
+  line-height: 35px;
+  background: #ffffff;
+  border: 1px solid #CCCCCC;
+  border-radius: 3px;
+  color: rgba(51, 51, 51, 1);
+  font-size: 14px;
+}
+.myForm .el-input__inner::placeholder{
+  color: rgba(138, 138, 138, 1);
+  font-size: 14px;
+}
+.myForm .el-date-editor .el-range-input::placeholder {
+  color: rgba(138, 138, 138, 1);
+  font-size: 14px;
+}
+.myForm .el-date-editor .el-range-input{
+  color: rgba(51, 51, 51, 1);
+  font-size: 14px;
+}
+.myForm .el-date-editor--daterange.el-input,.myForm .el-date-editor--daterange.el-input__inner, .myForm .el-date-editor--timerange.el-input,.myForm .el-date-editor--timerange.el-input__inner {
+  width: 350px;
+}
+.myForm .el-date-editor .el-range__icon, .myForm .el-date-editor .el-range-separator, .myForm .el-date-editor .el-range__close-icon{
+  line-height: 20px;
+}
+.myForm .el-date-editor--year .el-input__inner{
+  padding-left: 35px;
+}
+
+.myForm .el-form-item__label {
+  padding-right: 10px;
+}
+
+.myForm .el-button{
+  width: 115px;
+  height: 35px;
+  line-height: 10px;
+  margin-bottom: 20px;
+}
+.myForm .el-form-item__content .el-button{
+  margin-bottom: 0px;
+}
+.myForm .el-button--default{
+  background: none;
+  border: 1px solid rgba(66, 139, 202, 1);
+  color: rgba(66, 139, 202, 1);
+}
+.myForm .el-button--default:hover{
+  color: #409EFF;
+  border: 1px solid rgba(66, 139, 202, 1);
+  background-color: #ecf5ff;
+}
+.myForm .el-button--primary {
+  background-color: #428bca;
+  border-color: #428bca;
+}
+.myForm .el-button--primary:hover{
+  background-color: #3071a9;
+  border-color: #3071a9;
+}
+/* 添加按钮的样式 */
+.myForm .btn-add {
+  color: #fff;
+  background: #5BC0DE;
+  border-color: #5BC0DE;
+}
+.myForm .btn-add:hover {
+  color: #fff;
+  background-color: rgba(91, 192, 222, .8);
+  border-color: rgba(91, 192, 222, .8);
+}
+.myForm .el-icon-plus{
+  font-size: 12px;
+}
+/*  form 表单样式统一控制 e*/
+
+
+/* dialog 样式统一控制 s */
+.myDialog .el-dialog, .myDialogColumn .el-dialog{
+  border-radius: 16px;
+}
+.myDialog .el-dialog__header, .myDialogColumn .el-dialog__header{
+  border-bottom: 2px solid #EDEFF5;
+  color: #333333;
+  font-weight: 600;
+}
+.myDialog .el-dialog__footer, .myDialogColumn .el-dialog__footer{
+  border-top: 2px solid #EDEFF5;
+  padding: 20px;
+}
+.myDialog .el-button, .myDialogColumn .el-button{
+  width: 115px;
+  height: 35px;
+  line-height: 10px;
+}
+.myDialog .el-button--primary, .myDialogColumn .el-button--primary {
+  background-color: #428bca;
+  border-color: #428bca;
+}
+.myDialog .el-button--primary:hover, .myDialogColumn .el-button--primary:hover{
+  background-color: #3071a9;
+  border-color: #3071a9;
+}
+.myDialogColumn .el-transfer .el-button{
+  width: auto;
+}
+.myDialog .el-form{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.myDialog  .el-form .el-form-item{
+  width: 50%;
+  padding: 0 60px;
+  margin-bottom: 15px;
+}
+.myDialog .el-form .el-form-item__label{
+  color: #333333;
+  line-height: 25px;
+}
+.myDialog .el-input__inner {
+  width: 300px;
+  height: 35px;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 8px 10px;
+}
+
+/* dialog 样式统一控制 e */

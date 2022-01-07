@@ -1,0 +1,13 @@
+@charset "utf-8";
+:root {
+    --header-Height: 61px;
+    --header-Background-start: #0882FD;
+    --header-Background-end: #0882FD;
+    --main-Height: calc(100% - 61px);
+    --font-Size14: 16px;
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --panelBox-shadow: rgba(233, 238, 250, 0.5);
+    --panelTitleColor: #2B2E38;
+}

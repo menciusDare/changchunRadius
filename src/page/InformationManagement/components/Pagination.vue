@@ -1,0 +1,94 @@
+<template>
+    <el-pagination class="changePagination"
+                   :current-page="cur_page"
+                   :page-sizes="pageSizes"
+                   :page-size="cur_pageSize"
+                   @size-change="handleSizeChange"
+                   @current-change="handleCurrentChange"
+                   layout="total, prev, pager, next, sizes"
+                   :total=count
+                   :hide-on-single-page="false">
+    </el-pagination>
+</template>
+
+<script>
+export default {
+  name: 'Pagination',
+  props: ['totalNum'],
+  data: function () {
+    return {
+      cur_page: 1, // 当前页
+      cur_pageSize: 10, // 当前分页单位
+      count: this.totalNum ? this.totalNum : 0,
+      pageSizes: [10, 20, 50]
+    }
+  },
+  methods: {
+    handleCurrentChange: function (val) {
+      this.cur_page = val
+      this.$emit('paginationFunction')
+    },
+    handleSizeChange: function (val) {
+      this.cur_pageSize = val
+      this.cur_page = 1
+      this.$emit('paginationFunction')
+    }
+  }
+}
+</script>
+
+<style>
+  .changePagination.el-pagination{
+    font-weight: 500;
+  }
+  .changePagination .el-pager li{
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    margin-left: 8px;
+    padding: 0px;
+    margin-right: 8px;
+  }
+  .changePagination .el-pager li.active{
+    border: 1px solid #1890FF;
+    color: rgba(24, 144, 255, 1);
+  }
+  .changePagination .el-pager li.active+li{
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+  }
+  .changePagination.el-pagination .btn-next, .changePagination.el-pagination .btn-prev{
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    padding: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.65);
+  }
+  .changePagination.el-pagination button,  .changePagination.el-pagination span:not([class*=suffix]){
+    color: rgba(0, 0, 0, 0.65);
+    min-width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+  }
+  .changePagination .el-input--mini{
+    font-size: 14px;
+  }
+  .changePagination .el-input--mini .el-input__inner{
+    line-height: 32px;
+    height: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    /*font-weight: 400;*/
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+  }
+</style>
